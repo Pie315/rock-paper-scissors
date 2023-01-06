@@ -3,19 +3,54 @@ console.log("Code working as intended!");
 
 // Returns either rock paper or scissors 
 function getComputerChoice() { 
-    OneToThree = Math.floor(Math.random() * 3);
-    console.log(OneToThree);
-    
+    OneToThree = Math.floor(Math.random() * 3);    
     if (OneToThree == 0) {
-        return "Rock";
+        return "rock";
     } else if (OneToThree == 1) {
-        return "Paper";
+        return "paper";
     } else if (OneToThree == 2) {
-        return "Scissors";
+        return "scissors";
     } else {
-        return "error";
+        return "error in getCompChoice";
     }
 }
 
-const userChoice = prompt("What is your choice?"); // Gets user input 
+// Returns lowercase version of user input
+function getUserChoice() {
+    let userChoice = prompt("What is your choice?"); // Gets user input 
+    userChoice = userChoice.toLowerCase();
+    return userChoice;
+}
 
+// returns "win", "loss", or "tie" from player perspective
+function winner(player, computer) {
+    if (player == "rock") {
+        switch (computer) {
+            case "rock": return "tie";
+            case "paper": return "loss";
+            case "scissors": return "win";
+        }
+    } else if (player == "paper") {
+        switch (computer) {
+            case "rock": return "win";
+            case "paper": return "tie";
+            case "scissors": return "loss";
+        }
+    } else if (player == "scissors") {
+        switch (computer) {
+            case "rock": return "loss";
+            case "paper": return "win";
+            case "scissors": return "tie";
+        }
+    } else {
+        return "error in winner"
+    }
+}
+
+// returns the outcome of a single game
+function playRound() {
+    const computer = getComputerChoice();
+    const user = getUserChoice();
+    let result = winner(user, computer);
+    console.log("The computer picked "+computer+" and you picked "+user+" resulting in: "+result);
+}
