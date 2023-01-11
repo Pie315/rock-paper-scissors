@@ -16,10 +16,9 @@ function getComputerChoice() {
 }
 
 // Returns lowercase version of user input
-function getUserChoice() {
-    let userChoice = prompt("What is your choice?"); // Gets user input 
-    userChoice = userChoice.toLowerCase();
-    return userChoice;
+function getUserChoice(playChoice) {
+    playChoice = playChoice.toLowerCase();
+    return playChoice;
 }
 
 // returns "win", "loss", or "tie" from player perspective
@@ -48,9 +47,9 @@ function winner(player, computer) {
 }
 
 // returns the outcome of a single game
-function playRound() {
+function playRound(choice) {
     const computer = getComputerChoice();
-    const user = getUserChoice();
+    const user = getUserChoice(choice);
     let result = winner(user, computer);
     return [computer, user, result];
     //console.log("The computer picked "+computer+" and you picked "+user+" resulting in: "+result);
@@ -60,8 +59,25 @@ let wins = 0;
 let losses = 0;
 let ties = 0;
 
+function onButtonClick(e) {
+    e.target.style.background = 'blue';
+}
+
+function onMouseUp(e) {
+    e.target.style.background = '#2DC7FF';
+}
+
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((button) => {
+    button.addEventListener('mousedown', (e) => {onButtonClick(e);})
+    button.addEventListener('mouseup', (e) => {onMouseUp(e);})
+});
 
 
+
+
+/*
 function game(rounds) {
     for (let i = 0; i < rounds; i++) {
         let result = playRound();
@@ -75,3 +91,4 @@ function game(rounds) {
     }
     console.log("You had "+wins+" wins, "+losses+" losses, and "+ties+" ties.")
 }
+*/
