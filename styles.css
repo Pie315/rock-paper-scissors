@@ -1,15 +1,26 @@
 body {
     background-color: rgb(3, 66, 86);
+    margin: 0;
+}
+
+.title {
+    background-color:hsl(194, 70%, 16%);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    padding: 26px 28px 26px 28px;
 }
 
 .buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     padding: 36px 48px 36px 48px;
+    gap: 24px;
 }
 
 button {
-    height: 36px;
-    width: 48px;
+    height: 64px;
+    width: 128px;
     background-color: honeydew;
+    font-size: 24px;
 }
