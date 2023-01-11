@@ -1,0 +1,15 @@
+body {
+    background-color: rgb(3, 66, 86);
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 36px 48px 36px 48px;
+}
+
+button {
+    height: 36px;
+    width: 48px;
+    background-color: honeydew;
+}
