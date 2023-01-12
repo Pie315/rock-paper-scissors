@@ -2,8 +2,8 @@ console.log("Code working as intended!");
 
 
 // Returns either rock paper or scissors 
-function getComputerChoice() { 
-    OneToThree = Math.floor(Math.random() * 3);    
+function getComputerChoice() {
+    OneToThree = Math.floor(Math.random() * 3);
     if (OneToThree == 0) {
         return "rock";
     } else if (OneToThree == 1) {
@@ -59,36 +59,13 @@ let wins = 0;
 let losses = 0;
 let ties = 0;
 
-function onButtonClick(e) {
-    e.target.style.background = 'blue';
-}
-
-function onMouseUp(e) {
-    e.target.style.background = '#2DC7FF';
-}
-
 const buttons = document.querySelectorAll('button');
 
 buttons.forEach((button) => {
-    button.addEventListener('mousedown', (e) => {onButtonClick(e);})
-    button.addEventListener('mouseup', (e) => {onMouseUp(e);})
+    button.addEventListener('mousedown', (e) => { onButtonClick(e); })
+    //button.addEventListener('mouseup', (e) => { onMouseUp(e); })
 });
 
-
-
-
-/*
-function game(rounds) {
-    for (let i = 0; i < rounds; i++) {
-        let result = playRound();
-        console.log("The computer picked "+result[0]+" and you picked "+result[1]+" resulting in: "+result[2]);
-
-        switch (result[2]) {
-            case "win": wins++;
-            case "loss": losses++;
-            case "tie": ties++;
-        }
-    }
-    console.log("You had "+wins+" wins, "+losses+" losses, and "+ties+" ties.")
+function onButtonClick(e) {
+    
 }
-*/
