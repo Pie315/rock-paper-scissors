@@ -1,3 +1,10 @@
+/* CSS HSL */
+--celadon-blue: hsla(196, 100%, 34%, 1);
+--cyan-process: hsla(196, 100%, 45%, 1);
+--vivid-sky-blue: hsla(196, 100%, 59%, 1);
+--oxford-blue: hsla(215, 61%, 16%, 1);
+--oxford-blue-2: hsla(209, 100%, 8%, 1);
+
 body {
     background-color: rgb(3, 66, 86);
     margin: 0;
