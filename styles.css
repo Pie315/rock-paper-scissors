@@ -9,7 +9,6 @@
 .pic {
     height: 200px;
     width: 200px;
-
 }
 
 body {
@@ -40,12 +39,26 @@ body {
 button {
     height: 64px;
     width: 128px;
-    background-color: var(--pale-cerulean);
+    background-color: var(--main-dark);
     font-size: 36px;
-    border: 3px solid salmon;
-    border-radius: 5px;
+    color: var(--purp-text);
+    border: 8px solid var(--deep-purple);
+    border-radius: 10px;
 }
 
 .pressed {
-    border: 5px solid black;
+    border: 8px solid black;
+}
+
+.resultOut {
+    color: var(--purp-text);
+    text-align: center;
+    font-size: 36px;
+    padding: 36px;
+}
+
+.stats {
+    text-align: center;
+    font-size: 24px;
+    padding: 48px;
 }
