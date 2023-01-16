@@ -58,6 +58,7 @@ function playRound(choice) {
 let wins = 0;
 let losses = 0;
 let ties = 0;
+let lastClicked = "";
 
 const buttons = document.querySelectorAll('button');
 
@@ -65,9 +66,13 @@ function onClick(clicked, button) {
     playRound(clicked);
     console.log(clicked);
     button.classList.add('pressed');
+    lastClicked = button;
 }
 
-function onRelease(released, button) {
+function onRelease(button) {
+    if (lastClicked == "") {
+        return;
+    }
     button.classList.remove('pressed');
 }
 
@@ -76,6 +81,12 @@ buttons.forEach((button) => {
 
     // and for each one we add a 'click' listener
     button.addEventListener('mousedown', () => {onClick(button.id, button)});
-    button.addEventListener('mouseup', () => {onRelease(button.id, button)});
-
+    //button.addEventListener('mouseup', () => {onRelease(lastClickedId, lastClicked)});
+    //button.addEventListener('mouseleave', () => {onRelease(button.id, button)})
 });
+
+document.addEventListener('mouseup', () => {onRelease(lastClicked)});
+
+const resultText = document.querySelector("#result");
+
+resultText.textContent = "hello World";

@@ -1,26 +1,32 @@
 :root {
-    --dark-jungle-green: #092327ff;
-    --deep-jungle-green: #0b5351ff;
-    --light-sea-green: #00a9a5ff;
+    --deep-purple: #291119;
+    --purp-text: #817579;
+    --main-dark: #090304;
     --teal-blue: #4e8098ff;
     --pale-cerulean: #90c2e7ff;
 }
 
 .pic {
-    height: 300px;
+    height: 200px;
+    width: 200px;
+
 }
 
 body {
-    background-color: whitesmoke;
     margin: 0;
+    font-family: 'Playfair Display', serif;
+    color: var(--purp-text);
+    background-color: var(--main-dark);
 }
 
 .title {
     background-color: var(--pale-cerulean); 
     margin: 0;
     display: flex;
+    font-weight: bold;
     justify-content: center;
     padding: 26px 28px 26px 28px;
+    background-color: var(--deep-purple);
 }
 
 .buttons {
@@ -28,15 +34,18 @@ body {
     justify-content: center;
     padding: 36px 48px 36px 48px;
     gap: 24px;
+
 }
 
 button {
     height: 64px;
     width: 128px;
     background-color: var(--pale-cerulean);
-    font-size: 24px;
+    font-size: 36px;
+    border: 3px solid salmon;
+    border-radius: 5px;
 }
 
 .pressed {
-    background-color: black;
+    border: 5px solid black;
 }
