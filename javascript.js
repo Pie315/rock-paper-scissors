@@ -42,7 +42,7 @@ function winner(player, computer) {
             case "scissors": return "tie";
         }
     } else {
-        return "error in winner"
+        return "error in winner";
     }
 }
 
@@ -61,11 +61,21 @@ let ties = 0;
 
 const buttons = document.querySelectorAll('button');
 
-buttons.forEach((button) => {
-    button.addEventListener('mousedown', (e) => { onButtonClick(e); })
-    //button.addEventListener('mouseup', (e) => { onMouseUp(e); })
-});
-
-function onButtonClick(e) {
-    
+function onClick(clicked, button) {
+    playRound(clicked);
+    console.log(clicked);
+    button.classList.add('pressed');
 }
+
+function onRelease(released, button) {
+    button.classList.remove('pressed');
+}
+
+// we use the .forEach method to iterate through each button
+buttons.forEach((button) => {
+
+    // and for each one we add a 'click' listener
+    button.addEventListener('mousedown', () => {onClick(button.id, button)});
+    button.addEventListener('mouseup', () => {onRelease(button.id, button)});
+
+});
