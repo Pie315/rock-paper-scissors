@@ -58,9 +58,15 @@ function playRound(choice) {
     const user = getUserChoice(choice);
     let result = winner(user, computer);
     switch (result) {
-        case "win": wins++;
-        case "loss": losses++;
-        case "tie": ties++;
+        case "win": 
+            wins++;
+            break;
+        case "loss": 
+            losses++;
+            break;
+        case "tie": 
+            ties++;
+            break;
     }
     return [computer, user, result];
 }
